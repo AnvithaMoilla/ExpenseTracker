@@ -1,5 +1,6 @@
-import './App.css';
-import InputDetails from './Components/Input';
+
+import './components.css';
+import InputDetails from './components/AddNewTransactionCmp';
 
 function App() {
   return (

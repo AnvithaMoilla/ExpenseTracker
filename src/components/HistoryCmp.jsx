@@ -9,11 +9,11 @@ export default function History({ props }) {
             {props.map((transaction, index) => (
                 <div 
                 key={index} 
-                className={`historyElements ${transaction.amount > 0 ? 'income' : 'expense'}`}
+                className={`history-elements ${transaction.amount > 0 ? 'income' : 'expense'}`}
                 >
                     
-                    <p>Transaction: {transaction.note}</p>
-                    <p>Amount: ${transaction.amount}</p>
+                    <p>{transaction.note}</p>
+                    <p>${transaction.amount}</p>
                 </div>
             ))}
         </div>

@@ -2,19 +2,17 @@ import React from 'react';
 
 export default function IncomeExpense({ props }) {
 
-    let income = 0;
-    let expense = 0;
-
-    props.forEach(transaction => {
+    const { income, expense } = props.reduce((accuulator,transaction) => {
         if (transaction.amount > 0) {
-            income += transaction.amount;
+            accuulator.income += transaction.amount;
         } else {
-            expense += transaction.amount;
+            accuulator.expense += transaction.amount;
         }
-    });
+        return accuulator;
+    }, { income: 0, expense: 0 });
 
     return (
-        <div className='incomeExpense'>
+        <div className='income-expense'>
             <div className="income-expense-cell" id='income'>
                 <p>Income</p>
                 <p>${income}</p>

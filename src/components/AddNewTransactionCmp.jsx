@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
-import BalanceTracker from './BalanceTracker';
-import IncomeExpense from './IncomeExpense';
-import History from './History';
+import BalanceTracker from './BalanceTrackerCmp';
+import IncomeExpense from './IncomeExpenseCmp';
+import History from './HistoryCmp';
 
 export default function InputDetails() {
 
@@ -37,7 +37,7 @@ export default function InputDetails() {
         <BalanceTracker props={transaction}/>
         <IncomeExpense props={transaction}/>
 
-        <form className="inputDetails" onSubmit={addDetails}>
+        <form className="input-details" onSubmit={addDetails}>
             <h4>Add New Transaction</h4>
 
             <label>Text</label>
@@ -59,7 +59,6 @@ export default function InputDetails() {
             <br />
             <button type="submit" id='transaction-btn'>Add Transaction</button>
         </form>
-
         <History props={transaction}/>
         </>
     );
